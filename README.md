@@ -4,7 +4,7 @@
 
 - Java
 - Spring Boot
-- In-memory Veri Depolama
+- Postgresql
 
 ## API Kullanımı
 
