@@ -10,6 +10,7 @@ import canerakin.vetapp.demo.business.models.responses.GetAllAnimalTypeResponse;
 import canerakin.vetapp.demo.business.models.responses.GetByIdAnimalTypeResponse;
 import canerakin.vetapp.demo.entities.concretes.AnimalType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,6 +40,7 @@ public class AnimalTypeController {
 
     }
 
+    @ResponseStatus(code = HttpStatus.CREATED)
     @PostMapping("/add")
     public void add(@RequestBody CreateAnimalTypeRequest createAnimalTypeRequest) {
         this.animalTypeService.add(createAnimalTypeRequest);

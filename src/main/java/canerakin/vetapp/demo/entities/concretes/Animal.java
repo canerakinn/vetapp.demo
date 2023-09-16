@@ -15,31 +15,32 @@ import java.util.List;
 
 
 public class Animal {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "animal_id")
-    private int animalId;
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "passport_id", unique = true)
-    private int passportId;
+    @Column(name = "passport_no", unique = true)
+    private int passportNo;
 
-    @Column(name = "animal_breed")
-    private String animalBreed;
+    @Column(name = "breed")
+    private String breed;
 
-    @Column(name = "animal_name")
-    private String animalName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "animal_age")
-    private int animalAge;
+    @Column(name = "age")
+    private int age;
 
-    @Column(name = "animal_serial_no", unique = true)
-    private int animalSerialNo;
+    @Column(name = "serial_no", unique = true)
+    private int serialNo;
 
-    @Column(name= "animal_description")
-    private String animalDescription;
+    @Column(name= "description")
+    private String description;
 
     @ManyToOne
-    @JoinColumn(name = "animal_type_id")
+    @JoinColumn(name = "animal_type_id" )
     private AnimalType animalType;
 
 

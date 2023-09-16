@@ -10,7 +10,7 @@ import lombok.*;
 @Setter
 public class GetByIdAnimalTypeResponse {
 
-    private int typeId;
+    private int Id;
 
-    private String typeName;
+    private String Name;
 }

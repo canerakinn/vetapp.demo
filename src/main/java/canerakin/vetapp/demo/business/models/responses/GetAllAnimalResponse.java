@@ -1,12 +1,14 @@
 package canerakin.vetapp.demo.business.models.responses;
 
+import canerakin.vetapp.demo.entities.concretes.AnimalType;
+import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.*;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Data
 public class GetAllAnimalResponse {
 
@@ -14,19 +16,24 @@ public class GetAllAnimalResponse {
     private int Id;
 
 
-    private int passportId;
-
-    private String animalBreed;
+    private int PassportNo;
 
 
-    private String animalName;
+    private String Breed;
 
 
-    private int animalAge;
+    private String Name;
 
 
-    private int animalSerialNo;
+    private int Age;
 
 
-    private String animalDescription;
+    private int SerialNo;
+
+
+    private String Description;
+
+    private AnimalType animalType;
+
+
 }

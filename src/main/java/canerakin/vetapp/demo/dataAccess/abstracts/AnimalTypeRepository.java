@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AnimalTypeRepository extends JpaRepository<AnimalType,Integer> {
 
+    boolean existsByName(String name); //spring jpa keywords
+
+
 }

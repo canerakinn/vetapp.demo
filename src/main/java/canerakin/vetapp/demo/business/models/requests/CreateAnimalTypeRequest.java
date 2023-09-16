@@ -11,5 +11,5 @@ import lombok.*;
 public class CreateAnimalTypeRequest {
 
 
-    private String typeName;
+    private String Name;
 }

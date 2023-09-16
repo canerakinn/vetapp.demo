@@ -1,6 +1,7 @@
 package canerakin.vetapp.demo.business.models.responses;
 
 
+import jakarta.persistence.Column;
 import lombok.*;
 
 @Data
@@ -11,7 +12,7 @@ import lombok.*;
 
 public class GetAllAnimalTypeResponse {
 
-    private int typeId;
+    private int Id;
 
-    private String typeName;
+    private String Name;
 }

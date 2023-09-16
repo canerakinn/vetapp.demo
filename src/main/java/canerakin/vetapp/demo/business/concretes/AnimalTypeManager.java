@@ -6,6 +6,7 @@ import canerakin.vetapp.demo.business.models.requests.CreateAnimalTypeRequest;
 import canerakin.vetapp.demo.business.models.requests.UpdateAnimalTypeRequest;
 import canerakin.vetapp.demo.business.models.responses.GetAllAnimalTypeResponse;
 import canerakin.vetapp.demo.business.models.responses.GetByIdAnimalTypeResponse;
+import canerakin.vetapp.demo.business.rules.AnimalTypeBusinessRules;
 import canerakin.vetapp.demo.dataAccess.abstracts.AnimalTypeRepository;
 import canerakin.vetapp.demo.entities.concretes.AnimalType;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,9 @@ public class AnimalTypeManager implements AnimalTypeService {
     public ModelMapperService modelMapperService;
     @Autowired
     private AnimalTypeRepository animalTypeRepository;
+
+    @Autowired
+    private AnimalTypeBusinessRules animalTypeBusinessRules;
 
 
 
@@ -68,6 +72,8 @@ public class AnimalTypeManager implements AnimalTypeService {
 //        animalType.setTypeName(createAnimalTypeRequest.getTypeName());
 //        this.animalTypeRepository.save(animalType);
 //        return animalType;
+
+        this.animalTypeBusinessRules.checkIfAnimalTypeExists(createAnimalTypeRequest.getName());
 
         AnimalType animalType = this.modelMapperService.forRequest().map(createAnimalTypeRequest, AnimalType.class);
         this.animalTypeRepository.save(animalType);

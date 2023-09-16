@@ -10,6 +10,6 @@ import lombok.*;
 @Setter
 public class UpdateAnimalTypeRequest {
 
-    private int id;   //id update içerisinde olmalı "olmaz ise yeni bir tane ekler yani add gibi"
-    private String typeName;
+    private int Id;   //id update içerisinde olmalı "olmaz ise yeni bir tane ekler yani add gibi"
+    private String Name;
 }
